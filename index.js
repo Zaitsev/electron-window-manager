@@ -940,7 +940,13 @@
 
             return this.createNew(false, false, false,  false, this.setup);
         },
-
+        /**
+         * this.windows is cached by ipc so it is not reliable to get all the windows
+         * @returns {Array}
+         */
+        'getAllNames':function(){
+            return _.keys(this.windows);
+        },
         /**
          * Get a window instance, by name
          * */
